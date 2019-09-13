@@ -1,23 +1,47 @@
-body{
-  background-image: url("beach.jpg");
+/*font-family: 'Saira Extra Condensed', sans-serif;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Archivo Narrow', sans-serif;
+font-family: 'News Cycle', sans-serif;*/
+
+.navbar-header{
+  font-family: 'Quicksand', sans-serif;
 }
+
+body{
+  margin: auto;
+  background-color: #99d8d0;
+}
+
 .jumbotron{
-  background: rgba(255, 255, 255, 0.3);
-  font-family: 'Devonshire', cursive;
+  background: #70416d;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  color: #e4f2f0;
 }
 
 .row{
-  background: rgba(255, 255, 255, 0.7);
-  padding: 0.5%;
-  margin: 0.1%
+  background: #e4f2f0;
+  padding-left: 10%;
+  padding-right: 10%;
+  color: #170a19;
 }
 
-p, h4{
-  font-family: 'Roboto Condensed', sans-serif;
+.container{
+  background: rgba(255, 255, 255, 0.7);
+}
+
+
+p, h4, li{
+  font-family: 'Quicksand', sans-serif;
 }
 
 h3{
-  font-family: 'Devonshire', cursive;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 20pt;
+}
+
+h2{
+  font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 30pt;
 }
 

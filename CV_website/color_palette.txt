@@ -1,0 +1,5 @@
+Color-palette:
+e4f2f0
+99d8d0
+70416d
+170a19
