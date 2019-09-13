@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+	margin:0;
+}
+body{
+	display: flex;
+	flex-flow: row wrap;
+	font-family: "Impact";
+	font-size: 35pt;
+	text-align: center;
+}
+
+/*body > * {
+    padding: 10px;
+	flex: 1 100%;
+}*/
+
+h1{
+	margin: 0;
+}
+
+a{
+	color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+header, footer{
+	background-color:#02440c;
+	color:white;
+	float: left;
+	padding:5px;
+	text-align:center;
+	width:100%;
+	height:auto;
+	margin: 10px;
+	box-shadow: 0 4px 8px 0 #525456, 0 6px 20px 0 #b8bec4;
+}
+
+.box{
+	float: left;
+	padding:5px;
+	text-align:center;
+	width:100%;
+	height:auto;
+	margin: 10px;
+	box-shadow: 0 4px 8px 0 #525456, 0 6px 20px 0 #b8bec4;
+
+}
+
+#colors{
+	color: white;
+}
+
+/*MAIN COLORS*/
+#gem{background-color:#40becd;}
+#frog{background-color:#789400;}
+#cloud{background-color:#f3f5e7;}
+#lemon{background-color:#e4d565;}
+
+/*GEM COLORS*/
+#gem-frog{background-color:#98E2ED;}
+#gem-cloud{background-color:#65CEDD;}
+#gem-lemon{background-color:#20A9BC;}
+
+/*LEMON COLORS*/
+#lemon-gem{background-color:#FFF8C0;}
+#lemon-frog{background-color:#FFF397;}
+#lemon-cloud{background-color:#C1B23D;}
+
+/*CLOUD COLORS*/
+#cloud-gem{background-color:#FBFBF7;}
+#cloud-frog{background-color:#CDD1B7;}
+#cloud-lemon{background-color:#ABB089;}
+
+/*FROG COLORS*/
+#frog-gem{background-color:#B3D233;}
+#frog-cloud{background-color:#93B213;}
+#frog-lemon{background-color:#5C7100;}
+
+
+@media only screen and (max-width:600px){
+	footer{
+		display: none;
+	}
+}
+
+@media only screen and (min-width:801px){
+	body{
+		max-width:960px;
+		margin:auto;
+	}
+	
+	.box{
+		width: 47.91666666666667%;
+		margin: 1.04166666666667%;
+	}
+	
+	header, footer{
+		width: 97.91666666666667%;
+		margin: 1.04166666666667%;
+	}
+	
+}
+
