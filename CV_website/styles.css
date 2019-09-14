@@ -10,20 +10,18 @@ font-family: 'News Cycle', sans-serif;*/
 
 body{
   margin: auto;
-  background-color: #99d8d0;
+  background-color: #170a19;
 }
 
 .jumbotron{
-  background: #70416d;
+  background: #99d8d0;
   font-family: 'Saira Extra Condensed', sans-serif;
-  color: #e4f2f0;
 }
 
 .row{
   background: #e4f2f0;
   padding-left: 10%;
   padding-right: 10%;
-  color: #170a19;
 }
 
 .container{
@@ -38,19 +36,33 @@ p, h4, li{
 h3{
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 20pt;
+  color: #70416d;
 }
 
 h2{
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 30pt;
+  color: #e4f2f0;
+}
+
+.navbar-inverse{
+  background-color: #170a19;
+}
+
+.navbar-inverse .navbar-nav li a:hover{
+  color: #99d8d0;
+}
+
+.navbar-inverse .navbar-header a:hover{
+  color: #99d8d0;
 }
 
 .navbar {
   margin-bottom: 0;
   border-radius: 0;
+
 }
 
 footer {
-  background-color: rgba(255, 255, 255, 0.3);
   padding: 25px;
 }
