@@ -1,5 +1,5 @@
 Color-palette:
-e4f2f0
-99d8d0
-70416d
-170a19
+f5e1da
+f1f1f1
+49beb7
+085f63
