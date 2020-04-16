@@ -1,2 +1,2 @@
 # Snowdrop
-Website projects (HTML, CSS, Javascript)
+School projects
