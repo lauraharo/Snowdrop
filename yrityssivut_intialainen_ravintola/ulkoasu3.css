@@ -1,0 +1,151 @@
+/*{
+border: 1px solid;
+} */
+body {
+  
+max-width:800px;
+min-width:400px;
+
+margin: 0 auto;
+
+background-image:url("vagator_tausta.jpg");  
+background-attachment: fixed;
+background-position:center top;
+}
+
+
+p{
+  font-family:'Abel', sans-serif;
+}
+
+h3{
+  font-family:'Titillium Web', sans-serif;
+  
+} 
+h2{
+font-family: 'Cutive Mono';
+color:black;
+font-size: 16px;
+}
+.sisalto{
+/*background-color:#05A8AA; */
+  text-align:justify;
+  font-size:20px;
+  width:500px;
+  overflow:hidden;
+  float:right;
+  padding:0px 20px;
+  margin: 100px 20px 0px 0px;
+}
+.ehdot{
+/*background-color:#05A8AA; */
+  text-align:justify;
+  font-size:16px;
+  width:700px;
+  overflow:hidden;
+  float:right;
+  padding:0px 20px;
+  margin: 100px 20px 0px 0px;
+}
+
+.lista{
+/*background-color:#05A8AA; */
+  text-align:justify;
+  font-size:16px;
+  width:400px;
+  line-height:0.5em;
+  overflow:hidden;
+  float:right;
+  padding:0px 20px; 0px; 0px;
+  margin: 100px 100px 0px 0px;
+}
+
+
+.boxi{
+  background-color:#DA9480;
+  color:white;
+  width:180px;
+  float:left;
+  overflow: hidden;
+  text-align:center;
+  padding:10px;
+  margin:100px 0px 0px 0px;
+  line-height:0.5em;
+  position: fixed;
+}
+
+.boxi h3{
+font-family:Cabin Sketch;
+}
+
+footer{
+  background-color:#333;
+  clear:both;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 795px; 
+  height: 90px;
+  margin: 0 auto;
+  padding:0px 0px 0px 5px;
+  line-height: 0.5em;
+}
+
+footer p{
+text-align: center;
+}
+
+footer a{
+color: #DA9480;
+}
+
+ .navi {
+  list-style-type:none;
+  background-color: #333;
+  overflow: hidden;
+  margin:0;
+  padding:0;
+}
+
+.navi li {
+  float: left; 
+}
+
+.navi li a{
+  display:block;
+  text-align:center;
+  padding:12px;
+  text-decoration:none;
+  font-size:17px;
+  font-family:'Titillium Web', sans-serif;
+  color:white;
+  width:136px;
+}
+
+li a:hover{
+  background-color:#ffffcc;
+  color:black;
+}
+.navi a.active {
+  background-color: #DA9480;
+  color: white;
+}
+
+.puhelin{
+width:450px;
+color:white;
+background-color:#DA9480;
+text-align:center;
+display: inline-block;
+/*margin: 10px 150px 0px 250px; */
+}
+
+.puhelin h3{
+font-family: Cabin Sketch;
+}
+
+.navi li.right {float: right;}
+
+@media screen and (max-width: 500px){
+  .navi li.right, 
+  .navi li {float: none;}

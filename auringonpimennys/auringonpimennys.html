@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js webgl - geometry - cube</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				margin: 0px;
+				background-color: #000000;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+    <body>
+
+        <script src="three.js"></script>
+        <script src="http://stemkoski.github.io/Three.js/js/OrbitControls.js"></script>
+
+        <script>
+
+            var camera, scene, renderer;
+            var mesh, mesh2, mesh3, sky_mesh;
+            var pivot, pivot2;
+
+            init();
+            animate();
+
+            function init() {
+
+                camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 2000);
+                camera.position.z = 400;
+
+                scene = new THREE.Scene();
+
+                //taivas
+
+                var sky_texture = new THREE.TextureLoader().load('space.jpg');
+                var sky_geometry = new THREE.PlaneGeometry(4000, 2000);
+                var material3 = new THREE.MeshBasicMaterial({ map: sky_texture, });
+                sky_mesh = new THREE.Mesh(sky_geometry, material3);
+                sky_mesh.position.z = -1000;
+                scene.add(sky_mesh);
+
+                var texture = new THREE.TextureLoader().load('earth.jpg');
+                var texture2 = new THREE.TextureLoader().load('moon.jpg');
+                var texture3 = new THREE.TextureLoader().load('sun.jpg');
+
+                var geometry = new THREE.SphereBufferGeometry(20);
+                var geometry2 = new THREE.SphereBufferGeometry(15);
+                var geometry3 = new THREE.SphereBufferGeometry(50);
+                var material = new THREE.MeshPhongMaterial({ map: texture });
+                var material2 = new THREE.MeshPhongMaterial({ map: texture2 });
+                var material3 = new THREE.MeshPhongMaterial({ map: texture3 });
+
+                pivot = new THREE.Object3D();
+                pivot2 = new THREE.Object3D();
+
+                mesh = new THREE.Mesh(geometry, material);              
+                mesh2 = new THREE.Mesh(geometry2, material2);    
+                mesh3 = new THREE.Mesh(geometry3, material3);
+
+                mesh.position.x = 300;
+                mesh.castShadow = true;
+                mesh.receiveShadow = true;
+                mesh2.position.x = 150;
+                mesh2.castShadow = true;
+                mesh2.receiveShadow = true;
+
+                pivot2.add(mesh2);
+                mesh.add(pivot2);
+                scene.add(mesh, mesh3);
+                pivot.add(mesh); //HUOM!
+                //pivot.add(mesh2)
+                scene.add(pivot);
+
+                //valot
+
+                var spotLight = new THREE.SpotLight(0xffffff, 1.5);
+                spotLight.position.set(-50, 0, 0);
+                spotLight.castShadow = true;
+                spotLight.shadow.mapSize.width = 1024;
+                spotLight.shadow.mapSize.height = 1024;
+                spotLight.shadow.camera.near = 500;
+                spotLight.shadow.camera.far = 4000;
+                spotLight.shadow.camera.fov = 30;
+                spotLight.rotation.y = Math.PI;
+                scene.add(spotLight);
+
+                var spotLight2 = new THREE.SpotLight(0xffffff, 1.5);
+                spotLight2.position.set(50, 0, 0);
+                spotLight2.castShadow = true;
+                spotLight2.shadow.mapSize.width = 1024;
+                spotLight2.shadow.mapSize.height = 1024;
+                spotLight2.shadow.camera.near = 500;
+                spotLight2.shadow.camera.far = 4000;
+                spotLight2.shadow.camera.fov = 30;
+                spotLight2.rotation.y = Math.PI;
+                scene.add(spotLight2);
+
+                var spotLight3 = new THREE.SpotLight(0xffffff, 1.5);
+                spotLight3.position.set(0, 0, 50);
+                spotLight3.castShadow = true;
+                spotLight3.shadow.mapSize.width = 1024;
+                spotLight3.shadow.mapSize.height = 1024;
+                spotLight3.shadow.camera.near = 500;
+                spotLight3.shadow.camera.far = 4000;
+                spotLight3.shadow.camera.fov = 30;
+                spotLight3.rotation.y = Math.PI;
+                scene.add(spotLight3);
+
+                var spotLight4 = new THREE.SpotLight(0xffffff, 1.5);
+                spotLight4.position.set(0, 0, -50);
+                spotLight4.castShadow = true;
+                spotLight4.shadow.mapSize.width = 1024;
+                spotLight4.shadow.mapSize.height = 1024;
+                spotLight4.shadow.camera.near = 500;
+                spotLight4.shadow.camera.far = 4000;
+                spotLight4.shadow.camera.fov = 30;
+                spotLight4.rotation.y = Math.PI;
+                scene.add(spotLight4);
+
+                hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 1);
+                hemiLight.color.setHSL(0.6, 1, 0.6);
+                hemiLight.groundColor.setHSL(0.095, 1, 0.75);
+                hemiLight.position.set(0, 500, 0);
+                scene.add(hemiLight);
+
+                renderer = new THREE.WebGLRenderer();
+                renderer.setPixelRatio(window.devicePixelRatio);
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.shadowMap.enabled = true;
+                document.body.appendChild(renderer.domElement);
+
+                controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+                //
+
+                window.addEventListener('resize', onWindowResize, false);
+
+            }
+
+            function onWindowResize() {
+
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+
+                renderer.setSize(window.innerWidth, window.innerHeight);
+
+            }
+
+            function animate() {
+
+                requestAnimationFrame(animate);
+
+                mesh.rotation.x += 0.005;
+                mesh.rotation.y += 0.01;
+                mesh3.rotation.y += 0.001;
+                pivot2.rotation.x -= 0.03;
+                pivot.rotation.y += 0.015;  // tai .x tai .z
+
+                controls.update();
+
+                renderer.render(scene, camera);
+
+            }
+
+        </script>
+
+    </body>
+</html>

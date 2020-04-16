@@ -10,15 +10,15 @@ font-family: 'News Cycle', sans-serif;*/
 
 body{
   margin: auto;
-  background-color: #f1f1f1;
+  background-color: #f1f2f2;
 }
 .jumbotron{
-  background: #f1f1f1;
+  background: #f1f2f2;
 }
 .jumbotron .row{
   /*background: #99d8d0;*/
   margin-top: 50px;
-  background: #f1f1f1;
+  background: #f1f2f2;
   font-family: 'Saira Extra Condensed', sans-serif;
   color: #085f63;
   margin-bottom: 0;
@@ -33,22 +33,33 @@ body{
 }
 
 .row{
-  background: #f5e1da;
+  background: #f1f2f2;
   padding-left: 10%;
   padding-right: 10%;
 }
 
 .btn-info{
   font-size: 20pt;
-  background-color: #085f63;
-  color: #f1f1f1;
+  background-color: #303032;
+  color: #f1f2f2;
   border-style: none;
-
+  width: 100%;
 }
 
+.btn-info:focus{
+  background-color: #dcdbe1;
+  color: #303032;
+}
+
+.btn-info:active{
+  background-color: #dcdbe1;
+  color: #303032;
+}
+
+
 .btn-info:hover{
-  background-color: #49beb7;
-  color: #f1f1f1;
+  background-color: #dcdbe1;
+  color: #303032;
 }
 
 .description{
@@ -60,11 +71,6 @@ p, h4, li{
   font-family: 'Quicksand', sans-serif;
 }
 
-h3{
-  font-family: 'Saira Extra Condensed', sans-serif;
-  font-size: 20pt;
-  color: #70416d;
-}
 
 h2{
   font-family: 'Saira Extra Condensed', sans-serif;
@@ -103,11 +109,11 @@ h2{
 }
 
 .navbar-inverse .navbar-nav li a{
-  color: #f1f1f1;
+  color: #f1f2f2;
 }
 
 .navbar-inverse .navbar-header a{
-  color: #f1f1f1;
+  color: #f1f2f2;
 }
 
 .navbar {

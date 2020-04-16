@@ -1,0 +1,19 @@
+﻿<Window x:Class="Kooste.Window_draw"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kooste"
+        mc:Ignorable="d"
+        Title="Window_draw" Height="450" Width="800">
+    <Grid>
+        <InkCanvas x:Name="inkCanvas" HorizontalAlignment="Left" Height="328" Margin="10,0,0,25" VerticalAlignment="Bottom" Width="374" Background="#FFEAE9E9" MouseLeftButtonDown="inkCanvas_MouseLeftButtonDown" MouseLeftButtonUp="inkCanvas_MouseLeftButtonUp" MouseMove="inkCanvas_MouseMove"/>
+        <Label Content="Draw" Margin="10,19,0,0" VerticalAlignment="Top" Height="42" Width="188" FontFamily="Segoe WP Black" HorizontalAlignment="Left" FontSize="16" RenderTransformOrigin="-0.05,0.498"/>
+        <Button x:Name="clear" Content="Clear" HorizontalAlignment="Left" Margin="401,258,0,0" VerticalAlignment="Top" Width="125" Height="42" Click="clear_Click"/>
+        <Button x:Name="cancel" Content="Cancel" HorizontalAlignment="Left" Margin="401,305,0,0" VerticalAlignment="Top" Width="125" Height="42" IsCancel="True"/>
+        <Button x:Name="close" Content="Close" HorizontalAlignment="Left" Margin="401,352,0,0" VerticalAlignment="Top" Width="125" Height="42" Click="close_Click"/>
+        <Button x:Name="save" Content="Save drawning" HorizontalAlignment="Left" Margin="401,115,0,0" VerticalAlignment="Top" Width="125" Height="42" Click="save_Click"/>
+        <Button x:Name="load" Content="Load latest drawning" HorizontalAlignment="Left" Margin="401,68,0,0" VerticalAlignment="Top" Width="125" Height="42" Click="load_Click"/>
+
+    </Grid>
+</Window>

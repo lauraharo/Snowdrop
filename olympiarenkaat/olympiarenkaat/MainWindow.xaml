@@ -1,0 +1,24 @@
+﻿<Window x:Class="olympiarenkaat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:olympiarenkaat"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Canvas x:Name="myCanvas" HorizontalAlignment="Left" Height="246" Margin="10,20,0,0" VerticalAlignment="Top" Width="354" Background="#FFE1FBFD">
+            <Ellipse x:Name="blue" Height="75" Canvas.Left="55" Stroke="#FF07079E" Canvas.Top="61" Width="74" StrokeThickness="5"/>
+            <Ellipse x:Name="yellow" Height="75" Canvas.Left="94" Stroke="#FFF3F309" Canvas.Top="102" Width="74" StrokeThickness="5"/>
+            <Ellipse x:Name="black" Height="75" Canvas.Left="134" Stroke="#FF00000C" Canvas.Top="61" Width="74" StrokeThickness="5"/>
+            <Ellipse x:Name="green" Height="75" Canvas.Left="173" Stroke="#FF20B408" Canvas.Top="102" Width="74" StrokeThickness="5"/>
+            <Ellipse x:Name="red" Height="75" Canvas.Left="213" Stroke="#FFEA200C" Canvas.Top="61" Width="74" StrokeThickness="5"/>
+        </Canvas>
+        <Button x:Name="button" Content="Brake figure" HorizontalAlignment="Left" Margin="10,288,0,0" VerticalAlignment="Top" Width="102" Click="button_Click" Height="44"/>
+        <Button x:Name="button2" Content="Brake figure 2" HorizontalAlignment="Left" Margin="454,288,0,0" VerticalAlignment="Top" Width="102" Height="44" Click="button2_Click"/>
+        <Button x:Name="animate" Content="Animate figure" HorizontalAlignment="Left" Margin="138,288,0,0" VerticalAlignment="Top" Width="102" Height="44" Click="animate_Click"/>
+        <local:OmaCanvas x:Name="omaCanvas" HorizontalAlignment="Left" Height="256" Margin="426,10,0,0" VerticalAlignment="Top" Width="338"/>
+
+
+    </Grid>
+</Window>

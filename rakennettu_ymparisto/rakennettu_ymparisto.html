@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js webgl - geometry - cube</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				margin: 0px;
+				background-color: #000000;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+    <body>
+        <script src="three.js"></script>
+        <script src="http://stemkoski.github.io/Three.js/js/OrbitControls.js"></script>
+        
+        <script>
+            var camera, scene, renderer;
+            var mesh, mesh2, sky_mesh, mesh3, mesh4, street_mesh, pave_mesh, pave_mesh2;
+            var valot = [];
+			
+
+			init(); // alustus 1 kerran
+			animate(); // animointisilmukka
+
+			function init() {
+
+				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 6000 );
+				camera.position.z = 400;
+
+				scene = new THREE.Scene();
+
+				var texture = new THREE.TextureLoader().load('apartment3.jpg');
+				var texture2 = new THREE.TextureLoader().load('apartment2.jpg');
+				var texture3 = new THREE.TextureLoader().load('apartment4.jpg');
+				var grass_texture = new THREE.TextureLoader().load('grass2.jpg');
+				var street_texture = new THREE.TextureLoader().load('street2.jpg');
+				var sky_texture = new THREE.TextureLoader().load('sky.jpg');
+				var pave_texture = new THREE.TextureLoader().load('street.jpg');
+
+				var geometry = new THREE.BoxBufferGeometry(100, 300, 300);
+				var geometry2 = new THREE.BoxBufferGeometry(100, 300, 200);
+				var geometry3 = new THREE.BoxBufferGeometry(100, 300, 200);
+				var plane = new THREE.BoxBufferGeometry(3000, 10, 3000);
+				var plane2 = new THREE.BoxBufferGeometry(200, 15, 3000);
+				var sky_geometry = new THREE.SphereBufferGeometry(3000);
+				var pave_geometry = new THREE.BoxBufferGeometry(200, 11, 700);
+
+				var material = new THREE.MeshPhongMaterial({ map: texture });
+				var material2 = new THREE.MeshLambertMaterial({ map: grass_texture }); // ffff00
+				var material3 = new THREE.MeshBasicMaterial({ map: sky_texture, side: THREE.BackSide });
+				var material4 = new THREE.MeshPhongMaterial({ map: texture2 });
+				var material5 = new THREE.MeshPhongMaterial({ map: texture3 });
+				var material6 = new THREE.MeshPhongMaterial({ map: street_texture });
+				var material7 = new THREE.MeshPhongMaterial({ map: pave_texture });
+
+				sky_mesh = new THREE.Mesh(sky_geometry, material3);				
+				scene.add(sky_mesh);
+
+				mesh = new THREE.Mesh(geometry, material);
+				mesh.position.x = 200;
+				mesh.position.y = 100;
+				mesh.position.z = -100;
+				mesh.castShadow = true;  // VARJOT
+				scene.add(mesh);
+
+				mesh3 = new THREE.Mesh(geometry2, material4);
+				mesh3.position.x = -200;
+				mesh3.position.y = 100;
+				mesh3.castShadow = true;  // VARJOT
+				scene.add(mesh3);
+
+				mesh4 = new THREE.Mesh(geometry3, material5);
+				mesh4.position.x = -200;
+				mesh4.position.y = 100;
+				mesh4.position.z = -400;
+				mesh4.castShadow = true;  // VARJOT
+				scene.add(mesh4);
+
+				mesh2 = new THREE.Mesh(plane, material2);				
+				mesh2.receiveShadow = true; // VARJOT
+				scene.add(mesh2);
+				mesh2.position.y = -50;
+
+				street_mesh = new THREE.Mesh(plane2, material6);
+				street_mesh.receiveShadow = true; // VARJOT
+				scene.add(street_mesh);
+				street_mesh.position.y = -50;
+
+				pave_mesh = new THREE.Mesh(pave_geometry, material7);
+				pave_mesh.receiveShadow = true; // VARJOT
+				scene.add(pave_mesh);
+				pave_mesh.position.y = -50;
+				pave_mesh.position.x = -200;
+				pave_mesh.position.z = -200;
+
+				pave_mesh = new THREE.Mesh(pave_geometry, material7);
+				pave_mesh.receiveShadow = true; // VARJOT
+				scene.add(pave_mesh);
+				pave_mesh.position.y = -50;
+				pave_mesh.position.x = 200;
+				pave_mesh.position.z = -200;
+
+                //VALOT
+				var directionalLight = new THREE.DirectionalLight(0xffffff);
+				directionalLight.castShadow = true;
+				directionalLight.position.set(-2, 2, 0);
+				scene.add(directionalLight);
+
+				directionalLight.shadow.mapSize.width = 512;  
+				directionalLight.shadow.mapSize.height = 512; 
+				directionalLight.shadow.camera.near = 0.5;    
+				directionalLight.shadow.camera.far = 500;     
+
+
+				var spot = new THREE.SpotLight(0xffffff, 0.5);
+				spot.position.set(100, 1000, 100);
+
+				spot.castShadow = true;
+
+				spot.shadow.mapSize.width = 1024;
+				spot.shadow.mapSize.height = 1024;
+
+				spot.shadow.camera.near = 500;
+				spot.shadow.camera.far = 4000;
+				spot.shadow.camera.fov = 30;
+
+				scene.add(spot);
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize(window.innerWidth, window.innerHeight);
+				renderer.shadowMap.enabled = true;  // VARJOT
+				document.body.appendChild( renderer.domElement );
+
+			    //
+				controls = new THREE.OrbitControls(camera, renderer.domElement); // lisää
+
+				window.addEventListener( 'resize', onWindowResize, false );
+			}
+
+			function onWindowResize() {
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+			}
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				controls.update(); //Lisää
+				renderer.render( scene, camera );
+
+			}</script>
+    </body>
+</html>
