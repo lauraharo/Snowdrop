@@ -1,0 +1,71 @@
+body{
+  text-align: center;
+}
+.long{
+  text-align: center;
+}
+
+h4{
+  color: #004596;
+}
+
+h1{
+  color: #2E66A9;
+}
+
+.slogan{
+  font-size: 10pt;
+  font-style: italic;
+}
+
+.btn-primary{
+  background-color: #004596;
+}
+
+.carousel-image{
+  width: 100%;
+  height: auto;
+}
+.fanpost{
+  margin:auto;
+  max-width: 600px;
+}
+
+@media only screen and (max-width:480px){
+	.long{
+		display: none;
+	}
+  .img-fluid{
+    display: none;
+  }
+  .card-text{
+    display: none;
+  }
+
+  h4{
+    font-size: 12pt;
+  }
+}
+
+@media only screen and (min-width:481px){
+  .short{
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width:801px){
+  .img-fluid{
+    display: none;
+  }
+}
+
+@media only screen and (min-width:801px){
+  .short{
+    display: none;
+  }
+  .container{
+    width: 800px;
+  }
+
+}

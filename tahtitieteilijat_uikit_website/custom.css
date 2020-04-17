@@ -1,0 +1,64 @@
+body{
+  background-image: url("galaksit.jpg");
+}
+
+h1{
+  height: 100px;
+  padding-top: 20px;
+  font-family: Play;
+}
+
+p{
+  font-family: Raleway;
+}
+
+.uk-cover-container{
+  text-align: center;
+  padding-top: 50px;
+}
+
+.uk-cover-container h1{
+  color: white;
+  font-size: 50pt;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.uk-container h1{
+  color: white;
+  background: rgba(50, 50, 50, 0.8);
+}
+
+.picture{
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  box-shadow: 0 8px 6px -6px black;
+  margin-bottom: 10px;
+
+}
+
+.uk-card{
+  background-color: transparent;
+  box-shadow: 0 0px 0px 0px;
+  font-size: 15pt;
+}
+
+.content{
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  box-shadow: inset 0 0 10px #000000;
+  color: black;
+}
+
+footer{
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+#tieto{
+  color: white;
+}

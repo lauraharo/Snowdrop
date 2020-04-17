@@ -1,0 +1,50 @@
+.callout.primary{
+  background-color: #000e21;
+}
+
+.row.column.text-center, .subheader{
+  color: white;
+}
+
+.title-bar, .top-bar, .menu.medium-horizontal{
+  background-color: white;
+}
+
+a, .title-bar, .top-bar{
+  color: #00c2b5;
+}
+
+.blog-fig{
+  color: white;
+}
+
+.menu-icon::after {
+    background: #00c2b5;
+    box-shadow: 0 7px 0 #00c2b5, 0 14px 0 #00c2b5;
+}
+
+.button{
+  background-color: #00c2b5;
+}
+
+h3{
+  color: #51713a;
+}
+
+.ale{
+  background-color: #00c2b5;
+  color: white;
+}
+
+.cell{
+  font-size: 14px;
+}
+
+.large-3{
+  background-color: #EAEAEA;
+}
+
+.breadcrumbs{
+  margin-left: 10px;
+  color:#00c2b5;
+}

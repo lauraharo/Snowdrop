@@ -1,5 +1,0 @@
-Color-palette:
-f5e1da
-f1f1f1
-49beb7
-085f63

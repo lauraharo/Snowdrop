@@ -1,0 +1,35 @@
+*{
+  text-align: center;
+}
+
+.container-fluid{
+  margin: 5px 0px 5px 0px;
+}
+
+input{
+  margin: 5px;
+}
+
+.carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+
+  form{
+    float: left;
+  }
+
+  .col-md{
+    padding: 20px;
+    text-align: center;
+    background-color: #cadb74;
+  }
+
+  .other{
+    background-color: #006958;
+    color: white;
+  }
+
+  .jumbotron{
+    border-radius: 0;
+  }

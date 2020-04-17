@@ -1,0 +1,158 @@
+
+*{
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+body{
+	display: flex;
+  flex-flow: row wrap;
+  background-color: #F1F4F4;
+}
+
+h1{
+  font-family: 'Amatic SC', cursive;
+  font-size: 30pt;
+}
+
+p{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2{
+  margin-top: 10px;
+  font-family: 'Amatic SC', cursive;
+}
+
+
+
+.header{
+  margin: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #0B4873;
+  box-shadow: 0 8px 6px -6px black;
+  color: #F1F4F4;
+
+}
+
+.headline{
+  float: left;
+}
+
+.headline h2{
+  font-size: 25pt;
+}
+
+.headline-icons{
+  margin-top: 10px;
+  float: right;
+}
+
+.col-1 h2{
+  background-color: #07273E;
+  padding: 10px;
+  box-shadow: 0 8px 6px -6px black;
+  color: #F1F4F4;
+  text-align: center;
+
+}
+
+.col-1{
+  width:96%;
+  height: auto;
+  margin: 1%;
+  padding: 1%;
+  float: left;
+}
+
+.col-3{
+  width:96%;
+  height: auto;
+  margin: 1%;
+  padding: 1%;
+  float: left;
+}
+
+.col-3 h2{
+  background-color: #07273E;
+  padding: 10px;
+  box-shadow: 0 8px 6px -6px black;
+  color: #F1F4F4;
+  text-align: center;
+}
+
+.col-4{
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  width: 100%;
+  background-color: #0B4873;
+  text-align: center;
+  color: #F1F4F4;
+}
+
+.video {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.video iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+
+.picture{
+  width: 100%;
+  height: auto;
+  margin: 0;
+  box-shadow: 0 8px 6px -6px black;
+  margin-bottom: 10px;
+}
+
+
+@media only screen and (max-width:480px){
+	.long{
+		display: none;
+	}
+}
+
+@media only screen and (min-width:481px){
+  .short{
+    display: none;
+  }
+  .col-1{
+    width: 47%;
+  }
+  .col-1 h2{
+    font-size: 20pt;
+  }
+  .col-3 h2{
+    font-size: 20pt;
+  }
+}
+
+@media only screen and (min-width:801px){
+  .short{
+    display: none;
+  }
+  .container{
+    width: 800px;
+  }
+
+  .col-1{
+    width: 31.33333333333333%;
+  }
+  .col-3{
+    width: 31.33333333333333%;
+  }
+
+}
